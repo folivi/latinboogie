@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Begin Head -->
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>LatinBoogie</title>
+    <%= csrf_meta_tags %>
+
+    <meta name="keywords" content="Salsa, party, Luxembourg" />
+    <meta name="description" content="Latin Parties in Luxembourg">
+    <meta name="author" content="Folivi F.">
+    <!-- Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700%7CRoboto%7CSource+Sans+Pro:600" rel="stylesheet">
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/iconsmind/iconsmind.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/dzsparallaxer/dzsparallaxer.css">
+    <!-- Theme Styles -->
+    <link rel="stylesheet" type="text/css" href="/css/landing/landing.style.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/global/global.min.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+  </head>
+  <!-- End Head -->
+  <body>
+    <!-- Page Loader -->    <!-- End Page Loader -->
+
+    <!--========== HEADER V1 ==========-->
+    <header id="js__header-sticky" class="navbar-fixed-top s-header-v1 s-header-v1__auto-hiding js__header-auto-hiding">
+      <!-- Navbar -->
+      <nav class="s-header-v1__navbar">
+        <div class="container g-display-table--lg">
+          <!-- Navbar Row -->
+          <div class="s-header-v1__navbar-row">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="s-header-v1__navbar-col">
+              <button type="button" class="collapsed s-header-v1__toggle" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+                <span class="s-header-v1__toggle-icon-bar"></span>
+              </button>
+            </div>
+            <div class="s-header-v1__navbar-col s-header-v1__navbar-col-width--180">
+              <!-- Logo -->
+              <div class="s-header-v1__logo">
+                <%=link_to root_url, class: "s-header-v1__logo-link"  do %>
+                  <img class="s-header-v1__logo-img s-header-v1__logo-img--default" src="/img/logo.png" alt="Dublin Logo">
+                  <img class="s-header-v1__logo-img s-header-v1__logo-img--shrink" src="/img/logo.png" alt="Dublin Logo">
+                <% end %>
+              </div>
+              <!-- End Logo -->
+            </div>
+            <div class="s-header-v1__navbar-col s-header-v1__navbar-col--right">
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse s-header-v1__navbar-collapse" id="nav-collapse">
+                <ul class="s-header-v1__nav">
+                  <li class="s-header-v1__nav-item"><a href="/" class="s-header-v1__nav-link s-header-v1__nav-link-hover">Home</a></li>
+                  <li class="s-header-v1__nav-item"><a href="/lineup" class="s-header-v1__nav-link s-header-v1__nav-link-hover ">Lineup</a></li>
+                  <li class="s-header-v1__nav-item"><a href="/tickets" class="s-header-v1__nav-link s-header-v1__nav-link-hover ">Tickets</a></li>
+                  <li class="s-header-v1__nav-item"><a href="/venue" class="s-header-v1__nav-link s-header-v1__nav-link-hover ">Venue</a></li>
+                  <li class="s-header-v1__nav-item"><a href="/partners" class="s-header-v1__nav-link s-header-v1__nav-link-hover ">Partners</a></li>
+                  <!-- Pages -->
+
+                </ul>
+              </div>
+              <!-- End Nav Menu -->
+            </div>
+          </div>
+          <!-- End Navbar Row -->
+        </div>
+      </nav>
+      <!-- End Navbar -->
+    </header>
+    <%= yield %>
+    <footer class="g-bg-color--dark-1">
+      <!-- Sign Up -->
+      <!-- <div class="g-hor-divider__solid--white-opacity-lightest">
+        <div class="g-container--md g-padding-y-50">
+          <div class="row g-hor-centered-row--md">
+            <div class="col-sm-5 g-hor-centered-row__col g-margin-b-30 g-margin-b-0">
+              <h3 class="text-uppercase g-font-size-32 g-font-weight--300 g-color--yellow g-margin-b-0">15% <strong>OFF</strong></h3>
+            </div>
+            <div class="col-sm-2 g-hor-centered-row__col g-margin-b-30 g-margin-b-0">
+              <a href="signup.html" class="s-btn-v1 s-btn-v1--white-brd g-font-size-13 g-font-weight--500 g-font-family--primary g-radius--50 g-padding-x-40 g-padding-y-8">Sign Up</a>
+            </div>
+            <div class="col-sm-5 g-hor-centered-row__col">
+              <p class="g-font-size-14 g-color--white g-margin-b-0">Sign up and get 15% off the price for icons that can meet all of your needs.</p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- End Sign Up -->
+
+      <div class="g-container--md g-padding-y-80 g-padding-y-100--sm">
+        <div class="row">
+          <!-- Links -->
+
+          <!-- End Links -->
+
+          <!-- Logo -->
+          <div class="col-sm-3 col-xs-12">
+            <div class="g-margin-b-25">
+              <div class="g-margin-b-10">
+                <a href="/">
+                  <img class="g-width-100" src="/img/logo.png" alt="Dublin Logo">
+                </a>
+              </div>              
+            </div>
+            <!-- Socials -->
+
+            <!-- End Socials -->
+          </div>
+          <!-- End Logo -->
+        </div>
+      </div>
+    </footer>
+    <!--========== END FOOTER ==========-->
+
+    <!--========== JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) ==========-->
+    <!-- Vendor -->
+    <script type="text/javascript" src="/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="/vendor/jquery.migrate.min.js"></script>
+    <script type="text/javascript" src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/vendor/jquery.smooth-scroll.min.js"></script>
+    <script type="text/javascript" src="/vendor/jquery.imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="/vendor/dzsparallaxer/dzsparallaxer.min.js"></script>
+    <script type="text/javascript" src="/vendor/jquery.equal-height.min.js"></script>
+    <script type="text/javascript" src="/vendor/jquery.noty.packaged.min.js"></script>
+    <script type="text/javascript" src="/vendor/wow.min.js"></script>
+    <!-- General Components and Settings -->
+    <script type="text/javascript" src="js/global.min.js"></script>
+    <script type="text/javascript" src="js/global/page-loader.min.js"></script>
+    <script type="text/javascript" src="js/global/header-sticky.min.js"></script>
+    <script type="text/javascript" src="js/global/auto-hiding-navbar.min.js"></script>
+    <script type="text/javascript" src="js/global/magnific-popup.min.js"></script>
+    <script type="text/javascript" src="js/global/wow.min.js"></script>
+    <!-- Theme Components and Settings -->
+    <script type="text/javascript" src="js/landing/equal-height.min.js"></script>
+    <script type="text/javascript" src="js/landing/mailchimp.min.js"></script>
+    <!--========== END JAVASCRIPTS ==========-->
+  </body>
+</html>
