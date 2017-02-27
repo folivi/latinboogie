@@ -20,8 +20,110 @@
     </div>
   </div>
 </section>
+
 <div class="g-bg-color--sky-light">
-  <div class="container g-padding-y-80 g-padding-y-100--sm">
-    <h2>Friday party </h2>
-  </div>
-</div>
+      <div class="g-container--md g-padding-y-100">
+        <!-- Prices -->
+        <div class="row g-margin-b-50">
+          <% @tickets.in_groups_of(2) do |tickets| %>
+            <div class="row">
+              <br />
+              <% tickets.each do |ticket| %>
+              <div class="col-md-6 g-full-width g-margin-b-100 g-margin-b-0--lg">
+                <!-- Prices -->
+                <div class="g-bg-color--white g-radius--4 g-padding-x-30 g-padding-x-40--md g-padding-y-40">
+                  <div class="g-hor-divider__solid--dark-1-lightest g-margin-b-30">
+                    <div class="g-margin-b-30">
+                      <h2 class="g-font-size-22 g-font-weight--400 g-margin-b-5"><%= ticket.name %></h2>
+                      <span class="g-font-size-30 g-font-weight--500 g-color--primary"><%= ticket.price %>€</span>
+                      <span class="g-font-size-30 g-font-weight--500 g-color--primary"></span>
+                      <p><%= ticket.description %></p>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- End Prices -->
+              </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <!-- End Prices -->
+        <div class="g-bg-color--white">
+          <% if flash.any? %>
+            <div class="alert alert-success"><h3><%= notice %></h3></div>
+          <% end %>
+          <div class="g-container--md">
+
+            <!-- Prices -->
+            <div class="g-container--md g-padding-y-50">
+              <center><h4>Booking form </h4></center>
+              <br />
+              <%= form_tag 'bookings', class:"form-horizontal", name:'booking-form', id:'booking-form', method: "post", authenticity_token: true do %>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Full name</label>
+                  <div class="col-sm-8">
+                    <input type="email" class="form-control" name="name" placeholder="Firstname lastname">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">Your email</label>
+                  <div class="col-sm-8">
+                    <input type="email" class="form-control" placeholder="email" name="email" id='email'>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">tickets</label>
+                  <div>
+                    <div class="col-sm-4">
+                      <select name='ticket_name' id='ticket_name'>
+                        <option value="PARTY PASS">Party pass (15€)</option>
+                        <option value="FULL PASS">Full Pass (25€)</option>
+                        <option value="FRIDAY PARTY WITH WORKSHOP">Friday Party with the Workshop (15€)</option>
+                        <option value="FRIDAY PARTY">Friday Party only (10€)</option>
+                        <option value="SATURDAY PARTY WITH WORKSHOP">Saturday Party with the Workshop (15€)</option>
+                        <option value="SATURDAY PARTY">Saturday Party only (10€)</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-4">
+                      <select name="quantity">
+                        <option value="" disabled="disabled">Quantity</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-8">
+                    <div class="checkbox">
+                      <textarea class="form-control" rows="5" name="message"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <a class="btn btn-default" id="booking-submit">Sign in</a>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="/vendor/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#booking-submit').click(function(){
+          if ($("#email").val() =='' || $("#ticket_name").val() =='' || $("#name").val() =='' ){
+            alert('Please fill all the fields in the form')
+          } else {
+            $("#booking-form").submit();
+          }
+        })
+      })
+    </script>

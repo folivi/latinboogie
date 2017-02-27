@@ -1,0 +1,58 @@
+<section class="g-bg-color--primary">
+  <div class="g-container--md g-padding-y-100 g-padding-y-150--sm">
+    <div class="g-text-center g-margin-t-80 g-margin-t-30--sm">
+      <h1 class="g-font-size-50 g-font-size-70--md g-font-weight--700 g-color--yellow g-margin-b-0">Secure Online payment</h1>
+    </div>
+  </div>
+</section>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="paybox">
+      <%= form_tag "/checkout"  do %>
+
+      <div class="form-group row"><label class="col-sm-5 col-form-label"><h4><%= @ticket.name %></h4></label></div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Tickets amount</label><select name="ticket_count">
+          <option value="1">1 Ticket <%= @ticket.price.to_i * 1 %>(15€)</option>
+          <option value="2">2 Tickets (<%= @ticket.price.to_i * 2 %>€)</option>
+          <option value="3">3 Tickets (<%= @ticket.price.to_i * 3 %>€)</option>
+          <option value="4">4 Tickets (<%= @ticket.price.to_i * 4 %>€)</option>
+          <option value="5">5 Tickets (<%= @ticket.price.to_i * 5 %>€)</option>
+        </select>
+      </div>
+
+        <div class="form-group row">
+          <input type="hidden" value="<%= params[:id]%>" name="ticket_id"/>
+          <label class="col-sm-2 col-form-label">*Firstname</label>
+          <input type="text" name="firstname">
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">*Lastname</label><input type="text" name="firstname">
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">*City</label>
+          <input type="text" name="firstname">
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">*Email</label>
+          <input type="email" name="firstname">
+        </div>
+        <div id="payment-form"></div>
+        <input type="submit" value="Pay now" class="btn btn-primary">
+      <% end %>
+    </div>
+
+  </div>
+</div>
+<script src="https://js.braintreegateway.com/js/braintree-2.30.0.min.js"></script>
+<script>
+// We generated a client token for you so you can test out this code
+// immediately. In a production-ready integration, you will need to
+// generate a client token on your server (see section below).
+var clientToken = "<%= Braintree::ClientToken.generate %>"
+
+braintree.setup(clientToken, "dropin", {
+  container: "payment-form"
+});
+</script>
